@@ -1,9 +1,9 @@
-package com.AlumniTask.step_definitions;
+package com.Practice_CyberTeckSchool.step_definitions;
 
 
-import com.AlumniTask.utilities.BrowserUtils;
-import com.AlumniTask.utilities.ConfigurationReader;
-import com.AlumniTask.utilities.Driver;
+import com.Practice_CyberTeckSchool.utilities.BrowserUtils;
+import com.Practice_CyberTeckSchool.utilities.ConfigurationReader;
+import com.Practice_CyberTeckSchool.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -21,10 +21,10 @@ public class Hooks {
     //import the @Before coming from io.cucumber.java
     @Before (order = 1)
     public void setupMethod(){
+        System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
+       // Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        //Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
     //@Before (value = "@login", order = 2 )
@@ -39,14 +39,9 @@ public class Hooks {
     public void teardownMethod(Scenario scenario){
 
         if (scenario.isFailed()) {
-
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
-
         }
-
-
-
         BrowserUtils.sleep(2);
         Driver.closeDriver();
 

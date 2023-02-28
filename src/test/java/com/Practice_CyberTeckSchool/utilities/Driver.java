@@ -1,4 +1,4 @@
-package com.AlumniTask.utilities;
+package com.Practice_CyberTeckSchool.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

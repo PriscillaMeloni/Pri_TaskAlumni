@@ -1,4 +1,4 @@
-package com.AlumniTask.runners;
+package com.Practice_CyberTeckSchool.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

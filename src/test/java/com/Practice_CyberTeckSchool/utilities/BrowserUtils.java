@@ -1,4 +1,4 @@
-package com.AlumniTask.utilities;
+package com.Practice_CyberTeckSchool.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
